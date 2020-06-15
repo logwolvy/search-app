@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Root from './components/root';
 import * as serviceWorker from './serviceWorker';
+import Book from "./models/Book";
+
+// Build inverted index from data
+// Can be moved to relevant component
+Book.setup();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Root />
   </React.StrictMode>,
   document.getElementById('root')
 );

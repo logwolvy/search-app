@@ -1,0 +1,25 @@
+hr.rounded {
+  border-top: 2px solid #e8e8e8;
+  border-radius: 5px;
+}
+
+.book-list-main {
+  padding: 1%;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

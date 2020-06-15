@@ -6,7 +6,7 @@ class Book extends Base {
     this.id = id;
     this.title = title;
     this.author = author;
-    this.summary = summary;
+    this.summary = summary.replace("The Book in Three Sentences:", "").trim();
   }
 }
 

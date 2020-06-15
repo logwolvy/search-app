@@ -10,7 +10,7 @@ import Book from "../models/Book";
 // So, doing an exact phrase search is impractical.
 // Hence, for a given set of tokens, an intersection of matched documents
 // yields better results. Also, a scoring strategy helps sorting by relevancy
-// This utility implements the above
+// This utility implements the same
 
 // NOTE: Contains redundant variable naming for expressing domain terminology
 
@@ -52,7 +52,7 @@ const search = (query, resultCount = 10) => {
     results.push(...scoreMatches(docGroupsByToken, docSelector, i));
   }
 
-  return sortMatches(results);
+  return sortMatches(results).slice(0, resultCount + 1);
 };
 
 const scoreMatches = (docGroupsByToken, docSelector, partialMatchFactor) => {
