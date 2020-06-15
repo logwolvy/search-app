@@ -44,8 +44,9 @@ class Base {
   static sanitizeSummary(summary) {
     return summary
       .replace("The Book in Three Sentences:", "")
-      .replace(/(\u00A0)|(\u2014)/g, " ")
-      .replace(/(\u201c)|(\u201d)|(\u2019)/g, "")
+      .replace(/(\u00A0)|(\u2014)/gm, " ")
+      .replace(/(\u201c)|(\u201d)|(\u2019)/gm, "")
+      .replace(/[.;,]/gm, "")
       .trim();
   }
 

@@ -74,14 +74,13 @@ test("summary sanitization for prefix and special characters", () => {
   const summaries = [
     {
       original:
-        "The Book in Three Sentences: Being mindful doesn\u2019t change the problems in your life.",
-      sanitized: "Being mindful doesnt change the problems in your life.",
+        "The Book in Three Sentences: doesn\u2019t change the problems; in your life.",
+      sanitized: "doesnt change the problems in your life",
     },
     {
       original:
-        "some\u00a0are not\u2014do not \u201cconfuse the two\u201d and do not desire the things",
-      sanitized:
-        "some are not do not confuse the two and do not desire the things",
+        "10 things some\u00a0are not\u2014do not \u201cconfuse the, two\u201d and, do not.",
+      sanitized: "10 things some are not do not confuse the two and do not",
     },
   ];
 
