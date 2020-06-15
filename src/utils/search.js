@@ -21,7 +21,7 @@ const search = (query, resultCount = 10) => {
 
   tokens.forEach((tkn) => {
     // store matched docIndexes
-    matches[tkn] = Book.search_inverted_index("summary", tkn);
+    matches[tkn] = Book.searchInvertedIndex("summary", tkn);
   });
 
   const tokenGroups = tokenCombinatons(tokens);
@@ -48,7 +48,6 @@ const search = (query, resultCount = 10) => {
     results.push(...scoreMatches(docGroupsByToken, docSelector, i));
   }
 
-  // console.log("--------->", JSON.stringify( { results: sortMatches(results) }, null, 4));
   return sortMatches(results);
 };
 

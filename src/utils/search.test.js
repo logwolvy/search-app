@@ -51,7 +51,7 @@ test("query 'foo bar baz'", () => {
     },
   ];
 
-  Book.search_inverted_index.mockImplementation(
+  Book.searchInvertedIndex.mockImplementation(
     (_summary, token) => modelResponse[token]
   );
   expect(search("foo bar baz", 10)).toEqual(expectedResult);
