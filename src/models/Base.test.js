@@ -1,7 +1,7 @@
 import Base from "./Base";
-import data from "../../data.json";
+import data from "../data/data.json";
 
-jest.mock("../../data.json");
+jest.mock("../data/data.json");
 
 const testBooksData = {
   titles: ["Anything You Want"],

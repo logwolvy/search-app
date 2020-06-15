@@ -1,4 +1,4 @@
-import data from "../../data.json";
+import data from "../data/data.json";
 import { tokenize } from "../utils/query";
 
 class Base {

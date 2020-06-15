@@ -20,9 +20,13 @@ const search = (query, resultCount = 10) => {
   const tokens = tokenize(query);
 
   tokens.forEach((tkn) => {
-    // store matched docIndexes
-    matches[tkn] = Book.searchInvertedIndex("summary", tkn);
+    const tokenMatches = Book.searchInvertedIndex("summary", tkn);
+    // Store matched index values
+    if (tokenMatches) matches[tkn] = tokenMatches
   });
+
+  // If no matches are found for any token
+  if (Object.keys(matches).length === 0) return [];
 
   const tokenGroups = tokenCombinatons(tokens);
   const tokenGroupCount = tokenGroups.length;

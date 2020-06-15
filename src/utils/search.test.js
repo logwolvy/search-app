@@ -54,5 +54,12 @@ test("query 'foo bar baz'", () => {
   Book.searchInvertedIndex.mockImplementation(
     (_summary, token) => modelResponse[token]
   );
-  expect(search("foo bar baz", 10)).toEqual(expectedResult);
+  expect(search("foo bar baz")).toEqual(expectedResult);
+});
+
+test("when no token matches", () => {
+  Book.searchInvertedIndex.mockImplementation((_summary, _token) => []);
+
+  expect(search("abcd")).toEqual([]);
+  expect(search("foo bar baz")).toEqual([]);
 });
