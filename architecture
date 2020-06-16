@@ -1,13 +1,12 @@
-          inverted index        Model (Book?)
+          inverted Index <-------> Book Model
                |                    |
                |                    |
                |                    |
 query ---> search util ---> doc ids to component ----> book objects to dropdown component
-
-
-
----- CONS ----
-binary search or radix tree for true autocompletion
-query analyzer for common words
-IDF for relevancy scoring
-css media queries for responsiveness
+            |   |  |
+            |   |  |
+            |   | Score calculation
+            |   |
+            |  Query Analyzer
+            |
+          Tokenizer
