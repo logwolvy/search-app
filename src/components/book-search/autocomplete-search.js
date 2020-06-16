@@ -29,9 +29,8 @@ export default function AutocompleteSearch() {
   };
 
   const delayedQuery = debounce((q) => {
-    // console.log('------->', JSON.stringify({ results: fullTextSearch(q) }, null, 4));
     return setResults(search(q).map((rec) => Book.find(rec.doc_id)));
-  }, 800);
+  }, 500);
 
   const handleQuery = (e) => {
     setQuery(e.target.value);
