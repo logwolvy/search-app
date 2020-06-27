@@ -1,9 +1,16 @@
-### Instructions
-##### Without docker
-`npm install`\
-`npm start` (Starts dev server)
+# React Search App
+- Inverted index based search utility (src/utils/search.js)
+- Document score calculation based on term frequency
+- Autocomplete suggestions component for example usage
 
-##### With docker
+#### Usage
+**Install**\
+`npm install`\
+`npm start` (Starts dev server)\
+
+-- or --
+
+**Docker**\
 `docker build -t search-app:1.0 .` (Prod optimized build)\
 `docker run -p 3000:80 search-app:1.0`
 
@@ -18,6 +25,6 @@
 - Binary search on inverted index or radix tree for token level autocompletion
 - Query analyzer for weighing down common words
 - Positional frequency and inverted document frequency(IDF) to improve relevancy scoring
-- CSS media queries for responsiveness (not very good at this)
-- Component tests
+- React component testing
 - Refactoring `autocomplete-search` component to break it down further
+- CSS media queries for responsiveness (not very good at this)
